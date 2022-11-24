@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "486581792156",
+    "project_id": "its-baudhayana",
+    "storage_bucket": "its-baudhayana.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:486581792156:android:ae173ca61ce92d5ea52c59",
+        "android_client_info": {
+          "package_name": "com.itshastra.baudhayana"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "486581792156-e62ghetvq527f8g6fvcgg87jud4885jd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCCkz-Oacnqb845tVrgeM2-awNzoSs4SFU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "486581792156-e62ghetvq527f8g6fvcgg87jud4885jd.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "486581792156-p0meurn3gdttqemmokkqg5f0s55c4r32.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.itshastra.baudhayana"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
