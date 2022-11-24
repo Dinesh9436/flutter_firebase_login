@@ -29,10 +29,7 @@ class _AppState extends State<App> {
         Provider<AuthenticationProvider>(
           create: (_) => AuthenticationProvider(FirebaseAuth.instance),
         ),
-        StreamProvider(
-          create: (context) => context.read<AuthenticationProvider>().authState,
-          initialData: null,
-        )
+        
       ],
       child: MaterialApp(
         theme: ThemeData(fontFamily: GoogleFonts.poppins().fontFamily),
@@ -47,7 +44,7 @@ class _AppState extends State<App> {
 class Authenticate extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final firebaseUser = context.watch<User?>();
+    final firebaseUser = FirebaseAuth.instance.currentUser;
 
     if (firebaseUser != null) {
       return HomePage(

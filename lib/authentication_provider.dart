@@ -5,7 +5,7 @@ class AuthenticationProvider {
 
   AuthenticationProvider(this.firebaseAuth);
 
-  Stream<User?> get authState => firebaseAuth.idTokenChanges();
+  
 
   Future<void> signOut() async {
     await firebaseAuth.signOut();

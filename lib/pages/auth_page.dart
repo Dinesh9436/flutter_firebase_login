@@ -1,7 +1,7 @@
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_login_assignment/authentication_provider.dart';
 import 'package:firebase_login_assignment/pages/helper.dart';
+import 'package:firebase_login_assignment/pages/home_page.dart';
 import 'package:firebase_login_assignment/widgets/button_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -237,6 +237,13 @@ class _AuthPageState extends State<AuthPage> {
                                             password: textfieldsStrings[3],
                                           );
                                       Helper(context).hideProgressIndicator();
+                                      Navigator.pushAndRemoveUntil(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) => HomePage(
+                                                    user: user!,
+                                                  )),
+                                          (route) => false);
                                     }
                                   }
                                 }
@@ -248,13 +255,19 @@ class _AuthPageState extends State<AuthPage> {
                               if (_passwordKey.currentState!.validate()) {
                                 Helper(context).showProgressIndicator();
                                 print('login');
-                                context
+                                await context
                                     .read<AuthenticationProvider>()
                                     .signIn(
                                       email: textfieldsStrings[2],
                                       password: textfieldsStrings[3],
                                     )
-                                    .then((value) => Helper(context).hideProgressIndicator());
+                                    .then((user) => Navigator.pushAndRemoveUntil(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) => HomePage(
+                                                  user: user!,
+                                                )),
+                                        (route) => false));
                               }
                             }
                           }

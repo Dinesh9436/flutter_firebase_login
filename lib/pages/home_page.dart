@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_login_assignment/pages/auth_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:firebase_login_assignment/widgets/button_widget.dart';
 
@@ -109,7 +110,8 @@ class _HomePageState extends State<HomePage> {
                 Colors.white,
               ],
               onPressed: () async {
-                context.read<AuthenticationProvider>().signOut();
+                await context.read<AuthenticationProvider>().signOut();
+                Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => const AuthPage()), (route) => false);
               },
             ),
           ),
